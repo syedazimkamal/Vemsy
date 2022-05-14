@@ -1,0 +1,543 @@
+{% load static %}
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+        }
+
+        .nav {
+            display: inline-flex;
+            width: 100%;
+            height: 50px;
+            background-color: white;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        }
+
+        .title {
+            margin: 8px 0 0 20px;
+            font-size: 30px;
+        }
+
+        .mtitle {
+            text-decoration: none;
+            color: black;
+        }
+
+        .sout {
+            background-clip: padding-box;
+            text-decoration: none;
+            color: gray;
+            padding: 5px 12px 5px;
+            position: absolute;
+            margin: 8px 15px 0;
+            right: 0;
+            background-color: whitesmoke;
+            border-radius: 60px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 700px;
+            top: 0;
+        }
+
+        .mback {
+            position: relative;
+            width: 100%;
+            height: 700px;
+            background-color: whitesmoke;
+            margin-bottom: 10px;
+        }
+
+        .bimg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .mcont {
+            position: relative;
+            z-index: 9;
+            width: 60%;
+            max-width: 80%;
+            height: 425px;
+            background-color: white;
+            top: 10%;
+            left: 10%;
+            border-radius: 10px;
+            padding: 10px;
+            padding-left: 20px;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        }
+
+        .hd {
+            position: relative;
+            top: 30px;
+        }
+
+        form {
+            padding: 25px;
+            padding-left: 100px;
+        }
+
+        select,
+        select option {
+            color: black;
+        }
+
+        select:invalid,
+        select option[value=""] {
+            color: gray;
+        }
+
+        .inputNC {
+            display: none;
+        }
+
+        .inputC {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            width: 100%;
+            height: 40px;
+            margin: 10px 0 10px;
+        }
+
+        input[type=text] {
+            background-color: whitesmoke;
+            border: solid 1px gray;
+            padding-left: 5px;
+        }
+
+        input[type=tel] {
+            background-color: whitesmoke;
+            border: solid 1px gray;
+            padding-left: 5px;
+        }
+
+        select {
+            background-color: whitesmoke;
+        }
+
+        .inputS {
+            border: hidden;
+            width: 100%;
+            height: 40px;
+            margin: 10px 0 10px;
+            position: absolute;
+            left: 0;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        }
+
+        .labels {
+            position: relative;
+            top: 75px;
+            left: 10px;
+            height: 40px;
+            width: 71px;
+        }
+
+        #label1 {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            padding: 6.5px 30px 6.8px 5px;
+            position: absolute;
+            background-color: whitesmoke;
+            border: 1px solid gray;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #label2 {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            padding: 6.5px 4.6px 6.8px 5px;
+            position: absolute;
+            background-color: whitesmoke;
+            border: 1px solid gray;
+
+                {
+                % comment %
+            }
+
+            border-right-style: none;
+
+                {
+                % endcomment %
+            }
+
+            position: absolute;
+            top: 60px;
+            font-family: 'Lucida Sans',
+            'Lucida Sans Regular',
+            'Lucida Grande',
+            'Lucida Sans Unicode',
+            Geneva,
+            Verdana,
+            sans-serif;
+        }
+
+        #label3 {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            padding: 6.5px 28.1px 6.8px 5px;
+            position: absolute;
+            background-color: whitesmoke;
+            border: 1px solid gray;
+
+                {
+                % comment %
+            }
+
+            border-right-style: none;
+
+                {
+                % endcomment %
+            }
+
+            position: absolute;
+            top: 120px;
+            font-family: 'Lucida Sans',
+            'Lucida Sans Regular',
+            'Lucida Grande',
+            'Lucida Sans Unicode',
+            Geneva,
+            Verdana,
+            sans-serif;
+        }
+
+        #label4 {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            padding: 6.5px 41.9px 6.8px 5px;
+            position: absolute;
+            background-color: whitesmoke;
+            border: 1px solid gray;
+
+                {
+                % comment %
+            }
+
+            border-right-style: none;
+
+                {
+                % endcomment %
+            }
+
+            position: absolute;
+            top: 180px;
+            font-family: 'Lucida Sans',
+            'Lucida Sans Regular',
+            'Lucida Grande',
+            'Lucida Sans Unicode',
+            Geneva,
+            Verdana,
+            sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .box {
+            background-color: white;
+            height: 100%;
+            position: relative;
+        }
+
+        .imgs {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            width: 25%;
+            position: relative;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .desc {
+            text-align: center;
+            position: relative;
+            margin: 30px 20px 25px;
+            font-size: 20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        #myVid {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            object-fit: cover;
+            z-index: 0;
+            margin: 0 0 -30px;
+        }
+
+        .content {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            padding: 0 0 30px;
+            display: flex;
+        }
+
+        .issueM {
+            height: 100%;
+            display: none;
+            width: 100%;
+            position: relative;
+            text-align: center;
+        }
+
+        .ah {
+            color: black;
+            text-align: center;
+            position: relative;
+            padding-top: 10px;
+            font-family: 'uTrebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        #hoverI1 {
+            margin-bottom: 0.3vw;
+        }
+
+        #hoverI2 {
+            margin-bottom: 0.3vw;
+        }
+
+        #hoverI3 {
+            margin-bottom: 0.3vw;
+        }
+        .hoverI {
+            padding: 1vw 1vw;
+            margin: 3vw 3vw;
+            color: black;
+            background-color: white;
+            border: solid 1px white;
+            border-radius: 5px;
+        }
+        .issueIL {
+            padding: 1vw 1vw;
+            text-decoration: none;
+            color: black;
+        }
+        .issueL {
+            width: 100%;
+            z-index: 1;
+            color: white;
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .issueP {
+            font-size: 5vw;
+            margin-left: 30px;
+        }
+        .issueB {
+            padding: 15px 20px;
+            margin-top: 10px;
+            margin-left: 30px;
+            background-color: black;
+            color: white;
+            border: solid 1px black;
+            cursor: pointer;
+        }
+
+        .issueB:hover {
+            background-color: white;
+            color: black;
+            border: solid 1px white;
+        }
+
+        .copyr {
+            width: 100%;
+            height: 50px;
+            background-color: whitesmoke;
+        }
+
+        .copyr h2 {
+            color: black;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 15px;
+            text-align: center;
+            padding-top: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        if ('geolocation' in navigator) {
+            console.log('geolocation available');
+            navigator.geolocation.watchPosition(position => {
+                var lat = position.coords.latitude
+                var lng = position.coords.longitude
+                var acc = position.coords.accuracy
+                console.log(lat, lng, acc);
+                document.getElementById('lat').value = lat;
+                document.getElementById('lng').value = lng;
+        }),{ maximumAge: 1000, timeout: 5000, enableHighAccuracy: true };
+    }
+        else {
+            console.log("Geolocation not available")
+        }
+
+        $(document).ready(function () {
+            $("#issueB").mouseover(function () {
+                $("#issueM").css("display", "contents"),
+                $(".issueM").html('<div class="hoverI1" id="hoverI1" data-aos="fade-down" data-aos-easing="linear">\
+                    <button class="hoverI"><a href="break_pad_worn" class="issueIL">Damaged Break Pads</a></button>\
+                    <button class="hoverI"><a href="dead_battery" class="issueIL">Dead Battery</a></button>\
+                    <button class="hoverI"><a href="engine_overheat" class="issueIL">Engine Overheating</a></button>\
+                </div>\
+                <div class="hoverI2" id="hoverI2" data-aos="fade-down" data-aos-easing="linear">\
+                    <button class="hoverI"><a href="flat_tyres" class="issueIL">Flat Tyres</a></button>\
+                    <button class="hoverI"><a href="no_fuel" class="issueIL">No Fuel</a></button>\
+                    <button class="hoverI"><a href="fuel_leak" class="issueIL">Fuel Leakage</a></button>\
+                    <button class="hoverI"><a href="engine_issue" class="issueIL">Engine Issue</a></button>\
+                </div>\
+                <div class="hoverI3" id="hoverI3" data-aos="fade-down" data-aos-easing="linear">\
+                    <button class="hoverI"><a href="ac_lights" class="issueIL">A.C and Lights Issue</a></button>\
+                    <button class="hoverI"><a href="uneven_tyre" class="issueIL">Uneven Tyres</a></button>\
+                    <button class="hoverI"><a href="warning" class="issueIL">Warnings on ECU</a></button>\
+                </div>');
+            });
+        });
+
+        function showfield(name) {
+            if (name == 'others') document.getElementById('o_issue').innerHTML = '<input type="text" name="o_issue" id="o_issue" class="inputC" placeholder="Type your other issues"/>', document.getElementById('mcont').style.height = "485px";
+            else document.getElementById('o_issue').innerHTML = '', document.getElementById('mcont').style.height = "425px";
+        }
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 150,
+            duration: 1500,
+        });
+    </script>
+
+    <div class="nav">
+        <p class="title"><a href="/home" class="mtitle">VEMSY</a></p>
+        <a href="/signout" class="sout">SIGN OUT</a>
+    </div>
+    <div class="mback">
+        <img src="{% static 'mback.jpg' %}" alt="" class="back">
+        <div class="mcont" id="mcont">
+            <div class="hd">
+                <h1>Vehicle Breakdown?</h1>
+                <h6>Let us know some details below and we will be there for you!</h6>
+            </div>
+            <div class="labels">
+                <label for="text" class="label" id="label1">PHONE</label>
+                <label for="text" class="label" id="label2">COMPANY</label>
+                <label for="text" class="label" id="label3">MODEL</label>
+                <label for="text" class="label" id="label4">ISSUE</label>
+
+            </div>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <input type="text" name="latitude" id="lat" class="inputNC">
+
+                <input type="text" name="longitude" id="lng" class="inputNC">
+
+                <input type="tel" name="number" id="number" class="inputC" placeholder="Type your phone" required><br>
+
+                <select name="company" id="company" class="inputC" required><br>
+                    <option value="" disabled selected> Select your company </option>
+                    <option value="hyundai">Hyundai Motors</option>
+                    <option value="tata">Tata Motors</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="kia">Kia Motors</option>
+                    <option value="skoda">Skoda</option>
+                    <option value="mg">MG</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="volkswagen">Volkswagen</option>
+                    <option value="honda">Honda</option>
+                    <option value="maruti">Maruti Suzuki</option>
+                    <option value="renault">Renault</option>
+                    <option value="mahindra">Mahindra</option>
+                    <option value="bmw">BMW</option>
+                    <option value="jeep">Jeep</option>
+                    <option value="ford">Ford</option>
+                    <option value="nissan">Nissan</option>
+                    <option value="audi">Audi</option>
+                    <option value="datsun">Datsun</option>
+                </select><br>
+
+                <input type="text" name="c_model" id="c_model" class="inputC" placeholder="Type your model"
+                    required><br>
+
+                <select name="issue" id="issue" class="inputC" required
+                    onchange="showfield(this.options[this.selectedIndex].value)">
+                    <option value="" disabled selected> Select your issue </option>
+                    <option value="dead_battery">Dead Battery</option>
+                    <option value="flat_tyres">Flat Tyres</option>
+                    <option value="engine_overheat">Engine Overheating</option>
+                    <option value="break_pad_worn">Damaged Break Pads</option>
+                    <option value="fuel_leak">Fuel Leakage</option>
+                    <option value="engine_issue">Engine Issue</option>
+                    <option value="ac_lights">A.C and Lights Issue</option>
+                    <option value="no_fuel">No Fuel</option>
+                    <option value="uneven_tyre">Uneven Tyres</option>
+                    <option value="warning">Warnings on ECU</option>
+                    <option value="others">Others</option>
+                </select>
+                <div id="o_issue"></div>
+
+                <input type="submit" id="submit" value="HELP" class="inputS">
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box" data-aos="zoom-in">
+            <img src="{% static 'location.png' %}" alt="" class="imgs">
+            <p class="desc">The Geolocation API allows the user to provide their location to web applications if they so
+                desire. For privacy reasons, the user is asked for permission to report location information.</p>
+        </div>
+        <div class="box" data-aos="zoom-in">
+            <img src="{% static 'database.png' %}" alt="" class="imgs">
+            <p class="desc"> Database is a collection of inter-related data which helps in efficient retrieval,
+                insertion and deletion of data from database and organizes the data in the form of tables, views,
+                schemas, reports etc.</p>
+        </div>
+        <div class="box" data-aos="zoom-in">
+            <img src="{% static 'python.png' %}" alt="" class="imgs">
+            <p class="desc">Django is a high-level Python Web framework that encourages rapid development and clean
+                pragmatic design. A Web framework is a set of components that provide a standard way to develop websites
+                fast and easily.</p>
+        </div>
+    </div>
+    <div class="content">
+        <video loop muted autoplay poster="video.mp4" id="myVid">
+            <source src="{% static 'video.mp4' %}" type="video/mp4">
+        </video>
+        <div class="issueL">
+            <p class="issueP">Hey! Try these solutions instead.</p>
+            <button class="issueB" id="issueB">HOVER ME</button>
+            <div class="issueM" id="issueM">
+            </div>
+        </div>
+    </div>
+    <div class="copyr">
+        <h2>© Copyright 2021 Vemsy All Rights Reserved.</h2>
+    </div>
+</body>
+
+</html>

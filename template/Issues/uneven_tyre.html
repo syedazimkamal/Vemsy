@@ -1,0 +1,167 @@
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            background-color: white;
+        }
+
+        .nav {
+            display: inline-flex;
+            width: 100%;
+            height: 50px;
+            background-color: white;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+            z-index: 1;
+        }
+
+        .title {
+            margin: 8px 0 0 20px;
+            font-size: 30px;
+        }
+
+        .mtitle {
+            text-decoration: none;
+            color: black;
+        }
+
+        .sout {
+            background-clip: padding-box;
+            text-decoration: none;
+            color: gray;
+            padding: 5px 12px 5px;
+            position: absolute;
+            margin: 8px 15px 0;
+            right: 0;
+            background-color: whitesmoke;
+            border-radius: 60px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+        .issues {
+            width: 100%;
+            position: relative;
+            height: 1000px;
+        }
+
+        .imgIs {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            height: 1000px;
+        }
+
+        .main {
+            width: 75%;
+            margin: 0 auto;
+            position: relative;
+            background-color: white;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        }
+
+        .try {
+            padding: 10px;
+            font-size: 1.55vw;
+            position: relative;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .issueH {
+            font-size: 50px;
+            text-align: center;
+            font-family: serif;
+        }
+
+        .issueP {
+            color: black;
+        }
+
+        .copyr {
+            width: 100%;
+            height: 50px;
+            background-color: whitesmoke;
+            position: relative;
+        }
+
+        .copyr h2 {
+            color: black;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 15px;
+            text-align: center;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <p class="title"><a href="/home" class="mtitle">VEMSY</a></p>
+        <a href="/signout" class="sout">SIGN OUT</a>
+    </div>
+    <div class="issues">
+        <img class="imgIs" src="{% static 'issue.jpg' %}" alt="">
+        <div class="try">
+            <h1>By the time we reach you, follow these ways to resolve your issue.</h1>
+        </div>
+        <div class="main">
+            <h1 class="issueH">Uneven Tyres</h1>
+            <p class="issueP">
+            <h3>Misalignment Causes Inner & Outer Wear:</h3>
+            When your vehicle’s tires demonstrate an excessive amount of wear on only their outer-most edges, this
+            so-called
+            “toe wear” may be evidence that your vehicle is experiencing misalignment. Such misalignment is causing an
+            uneven amount of pressure to be applied to only the outer edge of the tire, leading to more rapid tread
+            loss. If
+            allowed to continue, a slope can begin to form in the tire’s structure, resulting in a so-called “camber
+            wear.”
+
+            In order to resolve this misalignment problem, you’ll need a certified mechanic to test your vehicle’s
+            alignment
+            and make adjustments based on the norms for your particular make and model. With a fresh set of even tires,
+            such
+            adjustments should help resolve this particular type of uneven wear
+
+            <h3>Improper Inflation Causes Center & Outer Edge Wear:</h3>
+            Center and outer edge wear are also common types of uneven tire wear. These are both caused by improper tire
+            inflation, with over-inflation and under-inflation leading to center and outer edge wear respectively. Both
+            types of uneven wear can be chalked up to excessive pressure being applied to certain parts of the tire
+            caused
+            by an unusual tire shape.
+
+            To resolve this type of wear, vehicle owners should check their owner’s manual and adjust their tire
+            pressure up
+            or down according to the manufacturer’s recommendations. Over time, this will help even out the tire’s wear
+            and
+            prevent weak points from forming on the inner and outer walls.
+
+            <h3>Suspension Damage Causes Cupping or Patchy Wear:</h3>
+            Finally, patchy wear and “cupping” wear can both be attributed to damage to the vehicle’s suspension, which
+            in
+            turn results in an erratic or scallop-like wear pattern. The appearance of either pattern is a serious cause
+            for
+            concern, requiring both a suspension repair and a tire replacement immediately.
+
+            Failure to act can result in the full tire becoming compromised structurally at unexpected moments</p>
+        </div>
+    </div>
+    <div class="copyr">
+        <h2>© Copyright 2021 Vemsy All Rights Reserved.</h2>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .helpM {
+            top: 0;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: 1;
+            background: white;
+            {% comment %} padding: 10px; {% endcomment %}
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+        }
+        .helpedM {
+            text-align: center;
+            top: 0;
+            width: 50%;
+            height: 50%;
+            min-width: 80%;
+            position: fixed;
+            z-index: 1;
+            background: white;
+            {% comment %} padding: 10px; {% endcomment %}
+            border-radius: 4px;
+            margin: 0;
+            top: 43%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        }
+        .helped {
+            width: 100%;
+            margin: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: relative;
+            z-index: 1;
+            height: 95%;
+            background: white;
+            {% comment %} padding: 10px; {% endcomment %}
+            border-radius: 4px;
+        }
+
+        .helpedW {
+            position: relative;
+            height: 8vh;
+        }
+        .helpedH {
+            position: relative;
+            font-size: 4vw;
+            font-family: monospace;
+        }
+
+        .helpedP {
+            position: relative;
+            font-size: 2vw;
+            margin-top: 2px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .helpedI {
+            top: 0.5vw;
+            right: 1vw;
+            position: absolute;
+            width: 5vh;
+        }
+
+        .helpedC {
+            position: absolute;
+            width: 2vh;
+            top: 0;
+            right: 0;
+            padding: 1.5px;
+            margin: 0.5vw;
+            cursor: pointer;
+        }
+        .helpedC:hover {
+            background-color: whitesmoke;
+        }
+
+        #locFinder {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        update = () => {
+            document.getElementById("help").style.display = "none";
+            console.log('ok')
+        }
+        {% comment %} setTimeout(update, 5000); {% endcomment %}
+
+        {% comment %} function initMap() {
+            var location = {lat: {{ latitude }}, lng: {{ longitude }}};
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4,
+                center: location
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        } {% endcomment %}
+        {% comment %} document.getElementById("locFinder").src = "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14287.626573623755!2d{{ longitude }}!3d{{ latitude }}49999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1639402216886!5m2!1sen!2sin"; {% endcomment %}
+    </script>
+    {% comment %} <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOQHkDgcZgJuPyAUCjrEgS1B7fcukpRE8&callback=initMap"></script> {% endcomment %}
+    <div class="helpM" id="help">
+        {% comment %} <div id="map"></div> {% endcomment %}
+        <div class="helpedM">
+            {% comment %} <div class="helpedW"> {% endcomment %}
+                <h1 class="helpedH">{{ user.first_name }}, Thanks for asking our help!
+                    {% comment %} <img class="helpedI" src="{% static 'inspect.png' %}" alt=""> {% endcomment %}
+                    <img class="helpedC" onclick="update()" src="{% static 'close.png' %}" alt="">
+                </h1>
+                <p class="helpedP">We will be at your location soon. Be patient!</p> 
+            {% comment %} </div> {% endcomment %}
+            <div class="helped">
+                <iframe frameBorder="0" id="locFinder" scrolling="yes" height="500px" width="100%" src="https://maps.google.com/maps?q={{ latitude }}, {{ longitude }}&z=15&output=embed"></iframe>
+                <img class="helpedI" src="{% static 'inspect.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+    {% include Issue %}
+</body>
+
+</html>

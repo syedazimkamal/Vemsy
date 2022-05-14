@@ -1,0 +1,134 @@
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            background-color: white;
+        }
+
+        .nav {
+            display: inline-flex;
+            width: 100%;
+            height: 50px;
+            background-color: white;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+            z-index: 1;
+        }
+
+        .title {
+            margin: 8px 0 0 20px;
+            font-size: 30px;
+        }
+
+        .mtitle {
+            text-decoration: none;
+            color: black;
+        }
+
+        .sout {
+            background-clip: padding-box;
+            text-decoration: none;
+            color: gray;
+            padding: 5px 12px 5px;
+            position: absolute;
+            margin: 8px 15px 0;
+            right: 0;
+            background-color: whitesmoke;
+            border-radius: 60px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .issues {
+            width: 100%;
+            position: relative;
+            height: 1000px;
+        }
+
+        .imgIs {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            height: 1000px;
+        }
+
+        .main {
+            width: 75%;
+            margin: 0 auto;
+            position: relative;
+            background-color: white;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        }
+
+        .try {
+            padding: 10px;
+            font-size: 1.55vw;
+            position: relative;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .issueH {
+            font-size: 50px;
+            text-align: center;
+            font-family: serif;
+        }
+
+        .issueP {
+            color: black;
+        }
+
+        .copyr {
+            width: 100%;
+            height: 50px;
+            background-color: whitesmoke;
+            position: relative;
+        }
+
+        .copyr h2 {
+            color: black;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 15px;
+            text-align: center;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <p class="title"><a href="/home" class="mtitle">VEMSY</a></p>
+        <a href="/signout" class="sout">SIGN OUT</a>
+    </div>
+    <div class="issues">
+        <img class="imgIs" src="{% static 'issue.jpg' %}" alt="">
+        <div class="try">
+            <h1>By the time we reach you, follow these ways to resolve your issue.</h1>
+        </div>
+        <div class="main">
+            <h1 class="issueH">A.C and Lights Issue</h1>
+            <p class="issueP">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda obcaecati consequatur
+                culpa vitae fuga earum
+                molestiae, itaque fugit neque modi deserunt tempore consectetur ex, temporibus quos reiciendis quisquam
+                minima
+                voluptatum?</p>
+        </div>
+    </div>
+    <div class="copyr">
+        <h2>© Copyright 2021 Vemsy All Rights Reserved.</h2>
+    </div>
+</body>
+
+</html>

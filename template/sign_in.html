@@ -1,0 +1,153 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            position: relative;
+        }
+
+        p {
+            margin: 5px;
+            position: absolute;
+            font-size: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+        }
+
+        a {
+            color: black;
+            font-size: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: absolute;
+            display: flex;
+            margin: 5px 213px 10px;
+            z-index: 1;
+        }
+
+        .main {
+            margin: 20px 0 20px;
+            position: relative;
+            font-size: 25;
+        }
+
+        .container {
+            margin: 0;
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        form {
+            width: 70%;
+            height: 350px;
+            background-color: white;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+            padding: 35px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .inputC {
+            width: 100%;
+            margin-top: 20px;
+            height: 35px;
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: groove;
+            border-color: black;
+            border-width: 1px;
+            background-color: rgb(247, 247, 247);
+            border-radius: 1px;
+            font-size: 17px;
+            padding: 11px 5px 0;
+        }
+
+        label {
+            font-size: 11px;
+            position: absolute;
+            margin: 21px 4px 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #submit {
+            margin-top: 25px;
+            padding: 10px 22px;
+            background-color: white;
+            border: 1px solid black;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+        }
+        #submit:hover {
+            padding: 10px 22px;
+            background-color: black;
+            color: white;
+        }
+
+        #error {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            padding-top: 20px;
+            bottom: 0;
+            height: 40px;
+            background-color: whitesmoke;
+            font-size: 13px;
+            list-style: none;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Dont you have an account? Go </p>
+    <a href="signup"> Sign Up</a>
+    <div class="container">
+        <form method="post" action="">
+        {% csrf_token %}
+
+            <h1>VEMSY</h1>
+
+            <p class="main">Login your account</p>
+
+            <div class="user">
+                <label for="username" class="labels">Username</label>
+                <input type="text" name="username" id="username" class="inputC"><br>
+            </div>
+
+            <div class="pas">
+                <label for="password" class="labels">Password</label>
+                <input type="password" name="password" id="password" class="inputC"><br>
+            </div>
+
+            <input type="submit" id="submit" name="Login User">
+        </form>
+    </div>
+    {% for message in messages %}
+    <div id="error">
+        {{message}}
+    </div>
+    {% endfor %}
+</body>
+
+</html>
